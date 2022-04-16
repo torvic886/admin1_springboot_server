@@ -23,6 +23,15 @@ public class UsuarioModel
 	
 	@Column(nullable = false)
 	private String nombre;
+
+	@Column(nullable = false)
+	private String cedula;
+	
+	@Column(nullable = false)
+	private String email;
+	
+	@Column(nullable = false)
+	private String telefono;
 	
 	@Column(nullable = false)
 	private boolean activo;
@@ -55,6 +64,30 @@ public class UsuarioModel
 	public void setNombre(String nombre) 
 	{
 		this.nombre = nombre;
+	}
+	
+	public String getCedula() {
+		return cedula;
+	}
+
+	public void setCedula(String cedula) {
+		this.cedula = cedula;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
 	}
 
 	public boolean isActivo() 
