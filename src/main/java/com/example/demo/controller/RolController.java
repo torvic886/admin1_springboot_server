@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.models.RolModel;
 import com.example.demo.services.RolService;
 
+
 @CrossOrigin(origins = "http://localhost:4200/")
 @RestController
 @RequestMapping("/rol")
