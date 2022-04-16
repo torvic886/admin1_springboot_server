@@ -2,7 +2,8 @@ package com.example.demo.models;
 
 import java.util.List;
 
-public class Response {
+public class Response 
+{
 	private boolean ok;
 	private int limite;
 	private int pagina;
@@ -10,55 +11,68 @@ public class Response {
 	private long registros;
 	private List<UsuarioModel> usuarios;
 
-	public Response() {
+	public Response() 
+	{
 		// TODO Auto-generated constructor stub		
 	}
 
-	public boolean isOk() {
+	public boolean isOk() 
+	{
 		return ok;
 	}
 
-	public void setOk(boolean ok) {
+	public void setOk(boolean ok) 
+	{
 		this.ok = ok;
 	}
 
-	public List<UsuarioModel> getUsuarios() {
+	public List<UsuarioModel> getUsuarios() 
+	{
 		return usuarios;
 	}
 
-	public void setUsuarios(List<UsuarioModel> result) {
+	public void setUsuarios(List<UsuarioModel> result) 
+	{
 		this.usuarios = result;
 	}
 
-	public int getLimite() {
+	public int getLimite() 
+	{
 		return limite;
 	}
 
-	public void setLimite(int limite) {
+	public void setLimite(int limite) 
+	{
 		this.limite = limite;
 	}
 
-	public int getPagina() {
+	public int getPagina() 
+	{
 		return pagina;
 	}
 
-	public void setPagina(int pagina) {
+	public void setPagina(int pagina) 
+	{
 		this.pagina = pagina;
 	}
 
-	public int getResults() {
+	public int getResults() 
+	{
 		return results;
 	}
 
-	public void setResults(int results) {
+	public void setResults(int results) 
+	{
 		this.results = results;
 	}
 
-	public long getRegistros() {
+	public long getRegistros() 
+	{
 		return registros;
 	}
 
-	public void setRegistros(long registros) {
+	public void setRegistros(long registros) 
+	{
 		this.registros = registros;
 	}	
 	

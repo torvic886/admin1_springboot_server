@@ -13,14 +13,17 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name= "usuarios")
-public class UsuarioModel {
+public class UsuarioModel 
+{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(unique = true, nullable = false)
 	private long id;
+	
 	@Column(nullable = false)
 	private String nombre;
+	
 	@Column(nullable = false)
 	private boolean activo;
 	
@@ -29,44 +32,50 @@ public class UsuarioModel {
 	@JoinColumn(name = "id_deporte")
 	private RolModel rol;
 	
-	public UsuarioModel() {
+	public UsuarioModel() 
+	{
 		// TODO Auto-generated constructor stub
 	}
 
-	public long getId() {
+	public long getId() 
+	{
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(long id) 
+	{
 		this.id = id;
 	}
 
-	public String getNombre() {
+	public String getNombre() 
+	{
 		return nombre;
 	}
 
-	public void setNombre(String nombre) {
+	public void setNombre(String nombre) 
+	{
 		this.nombre = nombre;
 	}
 
-	public boolean isActivo() {
+	public boolean isActivo() 
+	{
 		return activo;
 	}
 
-	public void setActivo(boolean activo) {
+	public void setActivo(boolean activo) 
+	{
 		this.activo = activo;
 	}
 
-	public RolModel getRol() {
+	public RolModel getRol() 
+	{
 		return rol;
 	}
 
-	public void setRol(RolModel rol) {
+	public void setRol(RolModel rol) 
+	{
 		this.rol = rol;
 	}
-	
-	
-	
 	
 
 }

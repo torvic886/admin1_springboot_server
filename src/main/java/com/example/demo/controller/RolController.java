@@ -16,17 +16,20 @@ import com.example.demo.services.RolService;
 @CrossOrigin(origins = "http://localhost:4200/")
 @RestController
 @RequestMapping("/rol")
-public class RolController {
+public class RolController 
+{
 	@Autowired
 	RolService rolService;
 	
 	 @GetMapping()
-	 public ArrayList<RolModel> obtenerRoles() {
+	 public ArrayList<RolModel> obtenerRoles()
+	 {
 		 return rolService.obtenerRoles();
 	 }
 	 
 	 @PostMapping()
-	 public RolModel guardarRol(@RequestBody RolModel rol) {
+	 public RolModel guardarRol(@RequestBody RolModel rol)
+	 {
 		 rol.setNombre(rol.getNombre().toUpperCase());
 		 return rolService.guardarRol(rol);
 	 }

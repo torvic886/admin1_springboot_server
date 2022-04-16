@@ -16,7 +16,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "Roles")
-public class RolModel {
+public class RolModel 
+{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(unique = true, nullable = false)
@@ -30,31 +31,38 @@ public class RolModel {
 	
 
 
-	public RolModel() {
+	public RolModel() 
+	{
 		// TODO Auto-generated constructor stub
 	}
 
-	public long getId() {
+	public long getId()
+	{
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(long id) 
+	{
 		this.id = id;
 	}
 
-	public String getNombre() {
+	public String getNombre() 
+	{
 		return nombre;
 	}
 
-	public void setNombre(String nombre) {
+	public void setNombre(String nombre) 
+	{
 		this.nombre = nombre;
 	}
 
-	public List<UsuarioModel> getUsuario() {
+	public List<UsuarioModel> getUsuario()
+	{
 		return usuario;
 	}
 
-	public void setUsuario(List<UsuarioModel> usuario) {
+	public void setUsuario(List<UsuarioModel> usuario) 
+	{
 		this.usuario = usuario;
 	}	
 	
