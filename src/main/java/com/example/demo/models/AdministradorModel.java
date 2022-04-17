@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table(name= "administrador")
 public class AdministradorModel 
 {
-	
+	//prueba git 3.1
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
