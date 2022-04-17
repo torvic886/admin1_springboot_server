@@ -45,9 +45,9 @@ public class UsuarioController
 	 public UsuarioModel guardarUsuario(@RequestBody UsuarioModel usuario) 
 	 {
 		 usuario.setNombre(usuario.getNombre().toLowerCase());
-		 usuario.setCedula(usuario.getCedula().toLowerCase());
-		 usuario.setEmail(usuario.getEmail().toLowerCase());
-		 usuario.setTelefono(usuario.getTelefono().toLowerCase());
+//		 usuario.setCedula(usuario.getCedula().toLowerCase()); // se comento porque no dejaba hacer pruebas
+//		 usuario.setEmail(usuario.getEmail().toLowerCase());
+//		 usuario.setTelefono(usuario.getTelefono().toLowerCase());
 		 return this.usuarioService.guardarUsuario(usuario);
 	 }
 	 
