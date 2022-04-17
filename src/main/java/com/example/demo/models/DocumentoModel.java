@@ -1,8 +1,5 @@
 package com.example.demo.models;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,28 +8,25 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @Entity
-@Table(name= "administrador")
-public class AdministradorModel 
+@Table(name= "documentos")
+public class DocumentoModel 
 {
-	//prueba git 3.1
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(unique = true, nullable = false)
-	private long idAdministrador;
+	private long id;
+	
+
 	
 	@Column(nullable = false)
 	private String nombre;
-	
+
 	@Column(nullable = false)
-	private String cedula;
+	private String tipo;
 	
 	@Column(nullable = false)
 	private String email;
@@ -40,14 +34,13 @@ public class AdministradorModel
 	@Column(nullable = false)
 	private String telefono;
 	
-	@JsonIgnore
-	@OneToMany(mappedBy = "administrador")
-	private List<DocumentoModel> documento;
+	@Column(nullable = false)
+	private boolean activo;
 	
-
+	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "id_login")
-	private LoginModel login;
+	@JoinColumn(name = "id_administrador")
+	private AdministradorModel administrador;
 	
 	
 	
@@ -55,7 +48,4 @@ public class AdministradorModel
 	
 	
 	
-	
-
 }
-

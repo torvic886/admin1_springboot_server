@@ -1,15 +1,24 @@
 package com.example.demo.models;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-@Table(name= "tiendas")
-public class TiendaModel {
+@Table(name= "tienda")
+public class TiendaModel 
+{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,9 +34,19 @@ public class TiendaModel {
 	@Column(nullable = false)
 	private String descripcionReporte;
 	
+	@JsonIgnore
+	@OneToMany(mappedBy = "tienda")
+	private List<ReporteModel> reporte;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_login")
+	private LoginModel login;
+	
+	
+	
 	public TiendaModel() 
 	{
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public long getId() {

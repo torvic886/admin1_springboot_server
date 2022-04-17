@@ -1,5 +1,9 @@
 package com.example.demo.models;
 
+import java.util.List;
+
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,7 +12,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
@@ -24,13 +31,13 @@ public class UsuarioModel
 	@Column(nullable = false)
 	private String nombre;
 
-	@Column(nullable = false)
+	@Column(nullable = true)
 	private String cedula;
 	
-	@Column(nullable = false)
+	@Column(nullable = true)
 	private String email;
 	
-	@Column(nullable = false)
+	@Column(nullable = true)
 	private String telefono;
 	
 	@Column(nullable = false)
@@ -40,6 +47,21 @@ public class UsuarioModel
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_deporte")
 	private RolModel rol;
+	
+//	@ManyToOne(fetch = FetchType.EAGER)
+//	@JoinColumn(name = "id_reporte")
+//	private ReporteModel reporte;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_login")
+	private LoginModel login;
+	
+
+	@JsonIgnore
+	@OneToMany(mappedBy = "usuario")
+	private List<ReporteModel> reporte;
+	
+	
 	
 	public UsuarioModel() 
 	{
